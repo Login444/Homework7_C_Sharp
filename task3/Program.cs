@@ -21,3 +21,27 @@ void FillArray(int[,] matr)
     Console.WriteLine();
     }
 }
+
+void Average(int[,] matr)
+{
+    int rows = matr.GetLength(0);
+    int columns = matr.GetLength(1);
+
+    for  (int x = 0; x < columns; x++)
+    {
+        float rowsAvg = 0;
+        for (int i = 0; i < rows; i++)
+        {
+            rowsAvg+=matr[i,x];
+        }
+        rowsAvg = rowsAvg / rows;
+        Console.WriteLine($"Среднее арифметическое столбца {x+1} - {rowsAvg} ");        
+    }
+}
+
+int[,] arr = new int [3,4];
+
+FillArray(arr);
+PrintArray(arr);
+Average(arr);
+
